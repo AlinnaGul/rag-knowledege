@@ -1,0 +1,204 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Data Nucleus Design System - Modern Technical Enterprise Theme
+Primary: Cyan/Teal gradient inspired branding
+Typography: Inter font family
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Brand Colors - Cyan/Teal Palette */
+      --primary: 197 100% 40%;          /* Data Nucleus teal */
+      --primary-foreground: 0 0% 100%;  /* White */
+      --primary-glow: 197 100% 50%;     /* Brighter teal */
+      --primary-muted: 197 60% 70%;     /* Muted teal */
+    
+    /* Background System */
+    --background: 0 0% 100%;          /* Pure white */
+    --foreground: 220 13% 18%;        /* Near black with slight blue */
+    
+    /* Surface Colors */
+    --card: 0 0% 100%;
+    --card-foreground: 220 13% 18%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 13% 18%;
+    
+    /* Secondary Palette - Slate/Stone */
+    --secondary: 210 20% 96%;         /* Light gray */
+    --secondary-foreground: 220 13% 18%;
+    
+    /* Muted Elements */
+    --muted: 210 20% 96%;
+    --muted-foreground: 215 25% 55%;  /* Medium gray */
+    
+    /* Accent Colors */
+      --accent: 197 100% 96%;           /* Very light teal */
+      --accent-foreground: 197 100% 30%; /* Dark teal */
+    
+    /* Status Colors */
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 100%;
+    --success: 142 76% 36%;           /* Green */
+    --success-foreground: 0 0% 100%;
+    --warning: 38 92% 50%;            /* Amber */
+    --warning-foreground: 0 0% 100%;
+    
+    /* Interactive Elements */
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+      --ring: 197 100% 40%;             /* Primary color for focus rings */
+    
+    /* Gradients */
+      --gradient-primary: linear-gradient(135deg, hsl(192 100% 70%), hsl(197 100% 40%));
+    --gradient-subtle: linear-gradient(180deg, hsl(0 0% 100%), hsl(210 20% 99%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(220 13% 18% / 0.05);
+    --shadow-md: 0 4px 6px -1px hsl(220 13% 18% / 0.1), 0 2px 4px -1px hsl(220 13% 18% / 0.06);
+    --shadow-lg: 0 10px 15px -3px hsl(220 13% 18% / 0.1), 0 4px 6px -2px hsl(220 13% 18% / 0.05);
+    --shadow-glow: 0 0 20px hsl(197 100% 40% / 0.15);
+    
+    /* Border Radius */
+    --radius: 0.75rem;                /* 12px - rounded-xl */
+    
+    /* Sidebar Colors */
+    --sidebar-background: 0 0% 100%;
+    --sidebar-foreground: 220 13% 18%;
+      --sidebar-primary: 197 100% 40%;
+    --sidebar-primary-foreground: 0 0% 100%;
+      --sidebar-accent: 197 100% 96%;
+      --sidebar-accent-foreground: 197 100% 30%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 197 100% 40%;
+    
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .dark {
+    /* Core Brand Colors - Adjusted for dark mode */
+      --primary: 197 100% 55%;          /* Data Nucleus teal for dark */
+      --primary-foreground: 220 27% 8%; /* Dark slate */
+      --primary-glow: 197 100% 65%;     /* Even brighter */
+      --primary-muted: 197 40% 50%;     /* Muted for dark */
+    
+    /* Background System */
+    --background: 220 27% 8%;         /* Dark slate */
+    --foreground: 210 20% 95%;        /* Near white */
+    
+    /* Surface Colors */
+    --card: 220 27% 12%;              /* Slightly lighter than background */
+    --card-foreground: 210 20% 95%;
+    --popover: 220 27% 12%;
+    --popover-foreground: 210 20% 95%;
+    
+    /* Secondary Palette */
+    --secondary: 220 27% 18%;         /* Dark gray */
+    --secondary-foreground: 210 20% 95%;
+    
+    /* Muted Elements */
+    --muted: 220 27% 18%;
+    --muted-foreground: 215 20% 65%;  /* Medium gray for dark */
+    
+    /* Accent Colors */
+      --accent: 197 100% 12%;           /* Dark teal */
+      --accent-foreground: 197 100% 80%; /* Light teal */
+    
+    /* Status Colors */
+    --destructive: 0 84% 55%;
+    --destructive-foreground: 210 20% 95%;
+    --success: 142 76% 45%;
+    --success-foreground: 210 20% 95%;
+    --warning: 38 92% 55%;
+    --warning-foreground: 210 20% 95%;
+    
+    /* Interactive Elements */
+    --border: 220 27% 18%;
+    --input: 220 27% 18%;
+      --ring: 197 100% 55%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(192 100% 70%), hsl(197 100% 55%));
+    --gradient-subtle: linear-gradient(180deg, hsl(220 27% 8%), hsl(220 27% 12%));
+    
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.1);
+    --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.15), 0 2px 4px -1px hsl(0 0% 0% / 0.1);
+    --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.2), 0 4px 6px -2px hsl(0 0% 0% / 0.15);
+    --shadow-glow: 0 0 20px hsl(197 100% 55% / 0.25);
+    
+    /* Sidebar Colors */
+    --sidebar-background: 220 27% 12%;
+    --sidebar-foreground: 210 20% 95%;
+      --sidebar-primary: 197 100% 55%;
+    --sidebar-primary-foreground: 220 27% 8%;
+    --sidebar-accent: 220 27% 18%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 220 27% 18%;
+    --sidebar-ring: 197 100% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-inter;
+    font-size: 16px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+  
+  /* Typography Scale */
+  h1 { @apply text-3xl font-semibold leading-tight; }
+  h2 { @apply text-2xl font-semibold leading-tight; }
+  h3 { @apply text-xl font-medium leading-tight; }
+  h4 { @apply text-lg font-medium leading-tight; }
+  h5 { @apply text-base font-medium leading-tight; }
+  h6 { @apply text-sm font-medium leading-tight; }
+  
+  /* Scrollbar Styling */
+  ::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: hsl(var(--muted));
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--muted-foreground) / 0.3);
+    border-radius: 3px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--muted-foreground) / 0.5);
+  }
+}
+
+/* Custom utility classes */
+@layer utilities {
+  .gradient-primary {
+    background: var(--gradient-primary);
+  }
+  
+  .gradient-subtle {
+    background: var(--gradient-subtle);
+  }
+  
+  .shadow-glow {
+    box-shadow: var(--shadow-glow);
+  }
+  
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
